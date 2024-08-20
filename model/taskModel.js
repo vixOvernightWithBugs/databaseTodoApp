@@ -51,7 +51,7 @@ const filterState = {
 
 const toggleTaskModel = async(data) => {
     return new Promise((resolve, reject) => {
-        const task = tasks.find((task) => task.id === data);
+        const task = tasks.find((task) => task.id === data.id);
         if (task.completed === filterState.UNDONE) {
             task.completed = filterState.DONE
         } else {

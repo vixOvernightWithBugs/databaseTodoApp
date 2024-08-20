@@ -1,15 +1,15 @@
 module.exports = {
   user: {
-    value: '/users',
+    value: '/api/users',
     userLogin: {
-      value: '/users/login'
+      value: '/api/users/login'
     }
   },
 
   task: {
-    value: '/tasks',
+    value: '/api/tasks',
     toggleTask: {
-      value: '/tasks/toggle-task'
+      value: '/api/tasks/toggle-task'
     }
   },
   

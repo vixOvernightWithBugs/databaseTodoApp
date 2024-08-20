@@ -35,7 +35,7 @@ const loginUserModel = (loginData) => {
         if (user) {
             const result = {
                 user : user,
-                token : token
+                token : generateUID()
             }
             resolve(result)
         } else {
