@@ -70,7 +70,11 @@ const deleteTask = async (request, response) => {
 				JSON.stringify({ message: 'No Data received to delete task' })
 			);
 		} else {
-			const message = await deleteTaskModel(body);
+			let data = {
+				id: body,
+				token: token,
+			};
+			const message = await deleteTaskModel(data);
 			response.writeHead(httpStatusCode.OK, {
 				'Content-Type': 'application/json',
 			});
@@ -100,7 +104,11 @@ const deleteAllTasks = async (request, response) => {
 				JSON.stringify({ message: 'No Data received to delete task' })
 			);
 		} else {
-			const message = await deleteAllTasksModel(body);
+			let data = {
+				user_id: body,
+				token: token,
+			};
+			const message = await deleteAllTasksModel(data);
 			response.writeHead(httpStatusCode.OK, {
 				'Content-Type': 'application/json',
 			});
@@ -130,7 +138,11 @@ const editTask = async (request, response) => {
 				JSON.stringify({ message: 'No Data received to edit task' })
 			);
 		} else {
-			const message = await editTaskModel(body);
+			let data = {
+				...body,
+				token: token,
+			};
+			const message = await editTaskModel(data);
 			response.writeHead(httpStatusCode.OK, {
 				'Content-Type': 'application/json',
 			});
@@ -160,7 +172,11 @@ const toggleTask = async (request, response) => {
 				JSON.stringify({ message: 'No Data received to edit task' })
 			);
 		} else {
-			const message = await toggleTaskModel(body);
+			let data = {
+				id: body,
+				token: token,
+			};
+			const message = await toggleTaskModel(data);
 			response.writeHead(httpStatusCode.OK, {
 				'Content-Type': 'application/json',
 			});
