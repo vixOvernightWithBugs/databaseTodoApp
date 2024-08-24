@@ -1,4 +1,4 @@
-var routerMethods = {
+const routerMethods = Object.freeze({
 	get: function (req, res, path, callback) {
 		if (path === req.url && req.method === 'GET') {
 			callback(req, res);
@@ -24,6 +24,6 @@ var routerMethods = {
 			callback(req, res);
 		}
 	},
-};
+});
 
 module.exports = routerMethods;

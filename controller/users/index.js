@@ -5,7 +5,8 @@ const {
 	addUserModel,
 	checkUserExistModel,
 } = require('../../model/usersModel.js');
-const { httpStatusCode, getDataFromRequest } = require('../../ultis/index.js');
+const { getDataFromRequest } = require('../../ultis/index.js');
+const { httpStatusCode } = require('../../constants.js');
 
 async function getUsers(request, response) {
 	const users = await getUsersModel();
